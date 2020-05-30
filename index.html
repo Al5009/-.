@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Школьные будни: День Головоломок.</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style>
+		@font-face{
+			src:url(19442.ttf);
+			font-family: my-font;
+		}
+	</style>
+</head>
+
+<body class="body">
+	<div class="menu" style="display: flex; background-image: url('menu/menu1.jpg'); background-size: cover; height: 600px;">
+		<h3 style="position: absolute; left: 485px; top: 60px; font-family: my-font; font-size: 45px;" class="font-weight-bold">Школьные будни:</h3>
+		<h1 style="position: absolute; left: 415px; top: 100px; font-family: my-font; font-size: 60px;" class="font-weight-bold">День Головоломок.</h1>
+		<button class="btn play btn-info font-weight-bold" style="position: absolute; top: 425px; left: 550px; height: 75px; width: 225px; font-family: my-font; font-size: 30px;">Начать игру</button>
+	</div>
+
+	<div class="main" style="display: flex; background-image: url('main/main.jpg'); background-size: cover; height: 600px; display: none;">
+		<div style="background-image: url('friend1.png'); background-size: cover; height: 450px; width: 250px; position: absolute; top: 150px; left: 100px;  transition:  0.1s;" class="friend"></div>
+		<div style="font-family: my-font; font-size: 20px; position: absolute; left: 800px; top: 300px;" class="font-weight-bold rounded loc1">Крестики-нолики</div>
+		<div style="font-family: my-font; font-size: 30px; position: absolute; left: 1000px; top: 350px;" class="font-weight-bold rounded loc2">Игры на память</div>
+		<div class="wind0 text-white" style="position: absolute; left: 325px; top: 415px; font-family: my-font; font-size: 30px;">Староста</div>
+		<div class="bg-primary text-white border border-light rounded" style="position: absolute; left: 325px; top: 450px; font-family: my-font; opacity: 0.6; height: 100px; width: 650px;"></div>
+		<div class="wind1 text-white border border-light rounded" style="position: absolute; left: 325px; top: 450px; font-family: my-font; height: 100px; width: 650px;">Привет, Имя! А ты чего сегодня так рано? Это что, рюкзак? Неужели ты совсем забыл? Сегодня - День Головоломок! Уроков не будет и все, кроме организаторов, приходят на два часа позже.</div>
+	</div>
+
+	<div class="loc_1" style="display: flex; display: none; background-image: url('loc1/loc1.jpg'); background-size: cover; height: 600px;">
+		<div class="chel1" style="background-image: url('loc1/loc1_chel.png'); background-size: cover; height: 500px; width: 250px; position: absolute; top: 150px; left: 100px;"></div>
+		<div class="wind00 text-white" style="position: absolute; left: 325px; top: 415px; font-family: my-font; font-size: 30px;">Лёха</div>
+		<div class="wind bg-danger text-white border border-light rounded" style="position: absolute; left: 325px; top: 450px; font-family: my-font; opacity: 0.6; height: 100px; width: 650px;"></div>
+		<div class="wind11 text-white border border-light rounded" style="position: absolute; left: 325px; top: 450px; font-family: my-font; height: 100px; width: 650px;">Привет. Ну, тут всё просто - красишь квадратик в чёрный, я в белый. Кто первый собрал три цвета в ряд - тот победил. Если ты меня обыграешь, то получишь медальку. Первый ход за тобой.</div>
+		<div style="background: grey; width: 300px; height: 300px; position: absolute; left: 500px; top: 100px;">
+			<div style="width: 300px; height: 100px; display: flex;">
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+			</div>
+			<div style="width: 300px; height: 100px; display: flex;">
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+			</div>
+			<div style="width: 300px; height: 100px; display: flex;">
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+				<div style="width: 100px; height: 100px; display: flex; background: grey;" class="nolic border border-dark"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="loc_2" style="display: flex; display: none; background-image: url('loc2/loc2.jpg'); background-size: cover; height: 600px;">
+		<div class="chel2" style="background-image: url('loc2/chel2.png'); background-size: cover; height: 500px; width: 300px; position: absolute; top: 150px; left: 100px;"></div>
+		<div class="wind000 text-white" style="position: absolute; left: 325px; top: 415px; font-family: my-font; font-size: 30px;">Юрий</div>
+		<div class="wind bg-danger text-white border border-light rounded" style="position: absolute; left: 325px; top: 450px; font-family: my-font; opacity: 0.6; height: 100px; width: 650px;"></div>
+		<div class="wind111 text-white border border-light rounded" style="position: absolute; left: 325px; top: 450px; font-family: my-font; height: 100px; width: 650px;">Ой, посмотрите кто пришёл! ... Чё ты вылупился на меня так? Училка по матеше сказала, что за помощь оставит пятёрку. Поэтому я тут сижу. Хочешь попробовать? Нажми на поле игры - все цвета превратятся в чёрную субстанцию. Ты должен будешь по памяти найти все пары.</div>
+		<div class="carda" style="background: grey; width: 600px; height: 400px; position: absolute; top: 25px; left: 450px;">
+			<div style="width: 600px; height: 200px; display: flex;">
+				<div style="width: 200px; height: 200px; display: flex; background: red;" class="card"></div>
+				<div style="width: 200px; height: 200px; display: flex; background: blue;" class="card"></div>
+				<div style="width: 200px; height: 200px; display: flex; background: green;" class="card"></div>
+			</div>
+			<div style="width: 600px; height: 200px; display: flex;">
+				<div style="width: 200px; height: 200px; display: flex; background: green;" class="card"></div>
+				<div style="width: 200px; height: 200px; display: flex; background: red;" class="card"></div>
+				<div style="width: 200px; height: 200px; display: flex; background: blue;" class="card"></div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+let menu = document.querySelector(".menu");
+let main = document.querySelector(".main");
+let loc1 = document.querySelector(".loc1");
+let loc_1 = document.querySelector(".loc_1");
+let loc2 = document.querySelector(".loc2");
+let loc_2 = document.querySelector(".loc_2");
+let num = 0;
+let wind1 = document.querySelector(".wind1");
+
+let friend = document.querySelector(".friend");
+
+let play = document.querySelector(".play");
+play.onclick = function () {
+	main.style.display = "block";
+	main.style.display = "flex";
+	menu.style.display = "none";
+
+	wind1.onclick = function () {
+		wind.innerHTML = "Ой, да не расстраивайся ты так! Зато ты сможешь первым решить головоломки! Ну и что, что пока готовы только два конкурса? Ой, хватит бурчать! Вон, в конце коридора, есть крестики-нолики. А вот тут, в кабинете 'ABX-234', игры на память.";
+	}
+	
+	loc1.onclick = function () {
+
+		main.style.display = "none";
+		loc_1.style.display = "block";
+		let check = 0;
+		let nolic = document.querySelectorAll(".nolic");
+		for (let i = 0; i < 9; i++) {
+			nolic[i].style.background = "grey";
+			nolic[i].onclick = function () {
+				nolic[i].style.background = "black";
+				let crest = function () {
+					let a = Math.random() * 8;
+					a = Math.round(a);
+					if (nolic[a].style.background == "black" || nolic[a].style.background == "white") {
+						if (nolic[1].style.background == "black" || nolic[1].style.background == "white") {
+							if (nolic[2].style.background == "black" || nolic[2].style.background == "white") {
+								if (nolic[3].style.background == "black" || nolic[3].style.background == "white") {
+									if (nolic[4].style.background == "black" || nolic[4].style.background == "white") {
+										if (nolic[5].style.background == "black" || nolic[5].style.background == "white") {
+											if (nolic[6].style.background == "black" || nolic[6].style.background == "white") {
+												if (nolic[7].style.background == "black" || nolic[7].style.background == "white") {
+													if (nolic[8].style.background == "black" || nolic[7].style.background == "white") {
+														if (nolic[0].style.background == "black" || nolic[7].style.background == "white") {
+
+														}
+														else{
+															nolic[0].style.background = "white";
+															check = check + 1;
+														}
+													}
+													else{
+														nolic[8].style.background = "white";
+														check = check + 1;
+													}
+												}
+												else{
+													check = check + 1;
+													nolic[7].style.background = "white";
+												}
+											}
+											else{
+												check = check + 1;
+												nolic[6].style.background = "white";
+											}
+										}
+										else{
+											check = check + 1;
+											nolic[5].style.background = "white";
+										}
+									}
+									else{
+										check = check + 1;
+										nolic[4].style.background = "white";
+									}
+								}
+								else{
+									check = check + 1;
+									nolic[3].style.background = "white";
+								}
+							}
+							else{
+								check = check + 1;
+								nolic[2].style.background = "white";
+							}
+						}
+						else{
+							check = check + 1;
+							nolic[1].style.background = "white";
+						}
+					}
+					else{
+						check = check + 1;
+						nolic[a].style.background = "white";
+					}
+				}
+				setTimeout(crest, 500);
+			}
+		}
+		let ch = function () {
+				if (nolic[0].style.background == "black" & nolic[1].style.background == "black" & nolic[2].style.background == "black" || nolic[3].style.background == "black" & nolic[4].style.background == "black" & nolic[5].style.background == "black" || nolic[6].style.background == "black" & nolic[7].style.background == "black" & nolic[8].style.background == "black" || nolic[0].style.background == "black" & nolic[3].style.background == "black" & nolic[6].style.background == "black" || nolic[1].style.background == "black" & nolic[4].style.background == "black" & nolic[7].style.background == "black" || nolic[2].style.background == "black" & nolic[5].style.background == "black" & nolic[8].style.background == "black" || nolic[0].style.background == "black" & nolic[4].style.background == "black" & nolic[8].style.background == "black" || nolic[2].style.background == "black" & nolic[4].style.background == "black" & nolic[6].style.background == "black") {
+					clearInterval(stop);
+					alert("Ты победил!");
+					main.style.display = "block";
+					main.style.display = "flex";
+					loc_1.style.display = "none";
+					num = num + 1;
+				}
+				if (nolic[0].style.background == "white" & nolic[1].style.background == "white" & nolic[2].style.background == "white" || nolic[3].style.background == "white" & nolic[4].style.background == "white" & nolic[5].style.background == "white" || nolic[6].style.background == "white" & nolic[7].style.background == "white" & nolic[8].style.background == "white" || nolic[0].style.background == "white" & nolic[3].style.background == "white" & nolic[6].style.background == "white" || nolic[1].style.background == "white" & nolic[4].style.background == "white" & nolic[7].style.background == "white" || nolic[2].style.background == "white" & nolic[5].style.background == "white" & nolic[8].style.background == "white" || nolic[0].style.background == "white" & nolic[4].style.background == "white" & nolic[8].style.background == "white" || nolic[2].style.background == "white" & nolic[4].style.background == "white" & nolic[6].style.background == "white") {
+					clearInterval(stop);
+					alert("Ты проиграл!");
+					main.style.display = "block";
+					main.style.display = "flex";
+					loc_1.style.display = "none";
+				}
+				if (check == 5) {
+					clearInterval(stop);
+					alert("Ты проиграл!");
+					main.style.display = "block";
+					main.style.display = "flex";
+					loc_1.style.display = "none";
+				}
+			}
+		let stop = setInterval(ch, 500); 
+	}
+
+	loc2.onclick = function (){
+		main.style.display = "none";
+		loc_2.style.display = "block";
+		let card = document.querySelectorAll(".card");
+		let carda = document.querySelector(".carda");
+		let check = 0;
+		let k = 0;
+		carda.onclick = function () {
+			for (let i = 0; i < 6; i++) {
+				card[i].style.background = "black";
+			}
+			card[0].onclick = function () {
+				card[0].style.background = "red";
+				if(check == 9) {
+					check = 0;
+				}
+				if (check == 4) {
+					alert("Правильно");
+					check = 9;
+					k = k + 1;
+				}
+				if(check == 1 || check == 2 || check == 3 || check == 5){
+					alert("Неправильно.");
+					card[0].style.background = "black"; 
+					check = 9;
+				}
+			}
+			card[4].onclick = function () { 
+				card[4].style.background = "red"; 
+				if(check == 9) {
+					check = 4;
+				}
+				if (check == 0) {
+					alert("Правильно");
+					check = 9;
+					k = k + 1;
+				}
+				if(check == 1 || check == 2 || check == 3 || check == 5){
+					alert("Неправильно.");
+					card[4].style.background = "black"; 
+					check = 9;
+				}
+			}
+
+			card[1].onclick = function () {
+				card[1].style.background = "blue"; 
+				if(check == 9) {
+					check = 1;
+				}
+				if (check == 5) {
+					alert("Right");
+					check = 9;
+					k = k + 1;
+				}
+				if(check == 0 || check == 2 || check == 3 || check == 4){
+					alert("Неправильно.");
+					card[1].style.background = "black";
+					check = 9;
+				}
+			}
+			card[5].onclick = function () {
+				card[5].style.background = "blue"; 
+				if(check == "nule") {
+					check = 5;
+				}
+				if (check == 1) {
+					alert("Right");
+					check = 9;
+					k = k + 1;
+				}
+				if(check == 0 || check == 4 || check == 2 || check == 3){
+					alert("Неправильно.");
+					card[5].style.background = "black";
+					check = 5;
+				}
+			}
+
+			card[2].onclick = function () {
+				card[2].style.background = "green"; 
+				if(check == 9) {
+					check = 2;
+				}
+				if (check == 3) {
+					alert("Right");
+					check = 9;
+					k = k + 1;
+				}
+				if(check == 0 || check == 1 || check == 4 || check == 5){
+					alert("Неправильно.");
+					card[2].style.background = "black";  
+					check = 9;
+				}
+			}
+			card[3].onclick = function () {
+				card[3].style.background = "green"; 
+				if(check == 9) {
+					check = 3;
+				}
+				if (check == 2) {
+					alert("Right");
+					check = 9;
+					k = k + 1;
+				}
+				if(check == 0 || check == 1 || check == 4 || check == 5){
+					alert("Неправильно.");
+					card[3].style.background = "black"; 
+					check = 9;
+				}
+			}
+			if (k == 3){
+				main.style.display = "block";
+				main.style.display = "flex";
+				loc_2.style.display = "none";
+				num = num + 1;
+			}
+		}
+	}
+	if (num == 2) {
+		alert("Ты собрал все монетки!")
+		main.style.display = "none";
+		document.querySelector(".body").style.backgroundImage = "url('aaa.jpg')";
+		document.querySelector(".body").style.backgroundSize = "cover";
+	}
+}
+</script>
+</body>
+</html>
